@@ -1,4 +1,7 @@
 import $ from 'jquery';
+import debounce from "lodash/debounce"
+
+let count = 0;
 
 $(document).ready(function () {
   // Create paragraph elements and button
@@ -10,3 +13,9 @@ $(document).ready(function () {
 
   $('body').append(paragraph1, paragraph2, button, paragraph3, paragraph4);
 });
+
+function updateCounter() {
+  count++;
+  $("count").text('$(count) click on the button');
+}
+button.on("click", debounce(updateCounter, 500));
