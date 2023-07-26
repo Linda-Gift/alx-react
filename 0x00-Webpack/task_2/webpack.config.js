@@ -28,3 +28,24 @@ module.exports = {
     ],
   },
 };
+
+ plugins: [
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['optipng', { optimizationLevel: 5 }],
+          ['jpegtran', { progressive: true }],
+          ['gifsicle', { interlaced: true }],
+        ],
+      },
+    }),
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
+  },
+};
