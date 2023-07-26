@@ -1,4 +1,8 @@
+// task_2/webpack.config.js
+
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   entry: './js/dashboard_main.js',
@@ -27,9 +31,7 @@ module.exports = {
       },
     ],
   },
-};
-
- plugins: [
+  plugins: [
     new ImageMinimizerPlugin({
       minimizerOptions: {
         plugins: [
