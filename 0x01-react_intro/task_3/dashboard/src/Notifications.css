@@ -1,4 +1,13 @@
-.Notification {
-    border: thin solid black;
+.Notifications {
+    border: thin dashed var(--color);
     padding: 1rem;
+    text-align: left;
+}
+
+li[data-priority="default"] {
+    color: rbg(41, 41, 161);
+}
+
+li[data-priority="urgent"] {
+    color: var(--color);
 }
